@@ -60,7 +60,7 @@ const generateId = () =>{
 }
 */
 
-app.post('/persons', (req, res) =>{
+app.post('/api/persons', (req, res) =>{
 
     const body = req.body
 
@@ -94,7 +94,9 @@ app.post('/persons', (req, res) =>{
 })
 
 app.delete('/api/persons/:id', (req, res) => {
+
     const id = Number(req.params.id)
+    
     persons = persons.filter(person => person.id !== id)
 
     res.status(204).end()
